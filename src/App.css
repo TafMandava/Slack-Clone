@@ -1,0 +1,6 @@
+/*
+    I want the CSS variable --slack-color used in Header.css to be in the scope of the body
+*/
+body {
+  --slack-color: #3f0f40;
+}

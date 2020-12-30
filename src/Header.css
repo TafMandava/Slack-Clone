@@ -1,0 +1,21 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  /* CSS variable */
+  background-color: var(--slack-color);
+  color: white;
+}
+
+.header__left {
+}
+
+.header__avatar {
+}
+
+.header__search {
+}
+
+.header__right {
+}
