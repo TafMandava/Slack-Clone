@@ -10,12 +10,6 @@ function Header() {
     return (
         <div className="header">
             <div className="header__left">
-                {/* Avatar of logged in user */}
-                <Avatar 
-                    className="header__avatar"
-                    src=""
-                    alt="Tafadzwa Mandava"
-                />
                 {/* Time icon*/}
                 <AccessTimeIcon />
             </div>
@@ -28,6 +22,12 @@ function Header() {
             <div className="header__right">
                 {/* Help icon */}
                 <HelpOutlineIcon />
+                {/* Avatar of logged in user */}
+                <Avatar 
+                    className="header__avatar"
+                    src=""
+                    alt="Tafadzwa Mandava"
+                />
             </div>            
         </div>
     );
