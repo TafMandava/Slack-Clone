@@ -8,9 +8,15 @@ function SidebarOption({ Icon, title }) {
             {Icon && <Icon className="sidebarOption__icon" />}
             {/* 
                 If you pass in an Icon then render the title
-                But if you didn't pass in the title, l want it to be a channel
+                But if you didn't pass in the Icon, l want it to be a channel
             */}
-            {Icon ? <h3>{title}</h3> : <h3># {title}</h3>}
+            {Icon ? (
+                <h3>{title}</h3>
+            ) : (
+                 <h3 className="sidebarOption__channel">
+                     <span className="sidebarOption__hash">#</span>{title}
+                </h3>
+            )}
         </div>
     );
 }

@@ -1,5 +1,31 @@
 .sidebarOption {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  padding-left: 2px;
+  /* Tell users that it's something that they can click */
+  cursor: pointer;
+}
+
+.sidebarOption:hover {
+  opacity: 0.9;
+  background-color: #340e36;
+}
+
+.sidebarOption > h3 {
+  font-size: 500;
 }
 
 .sidebarOption__icon {
+  padding: 10px;
+  /* Overriding the font size of Material UI */
+  font-size: 15x !important;
+}
+
+.sidebarOption__hash {
+  padding: 10px;
+}
+
+.sidebarOption__channel {
+  padding: 10px 0;
 }
