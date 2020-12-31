@@ -70,4 +70,12 @@ const auth = firebase.auth();
 */
 const provider = new firebase.auth.GoogleAuthProvider();
 
-export {db, auth, provider}
+/*
+    Exclusive exports
+*/
+export {auth, provider}
+
+/*
+    Default export since it's used by many files
+*/
+export default db;
