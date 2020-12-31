@@ -44,10 +44,12 @@
   border: none;
   text-align: center;
   min-width: 35vw;
+  color: white;
 }
 
 input:focus {
   outline-width: 0;
+  color: white;
 }
 
 .header__right {
