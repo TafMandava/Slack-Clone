@@ -39,7 +39,10 @@ function Sidebar() {
             <SidebarOption Icon={ExpandMoreIcon} title="Expand More" />
             <hr />
             <SidebarOption Icon={AddIcon} title="Add Channel" /> 
-            {/* Connect to DB and list all the channels */}         
+            {/* 
+                Connect to DB and list all the channels
+                Again we will be using the Sidebar channel
+            */}         
         </div>
     );
 }
