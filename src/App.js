@@ -2,6 +2,7 @@ import './App.css';
 import Header from './Header';
 import Sidebar from './Sidebar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Chat from './Chat';
 
 function App() {
   return (
@@ -28,7 +29,7 @@ function App() {
                 http://localhost:3000/room/abc
             */}
             <Route path="/room/:roomId">
-              <h1>Chat Screen</h1>
+              <Chat />
             </Route>
             {/*
                 http://localhost:3000/
