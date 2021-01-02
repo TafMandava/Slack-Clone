@@ -1,10 +1,11 @@
 .sidebar {
   /*background-color: var(--slack-color);*/
+  flex: 0.3;
   background-color: #421f49;
   border-top: 1px solid #49274b;
-  max-width: 285px;
+  max-width: 270px;
   color: white;
-  height: 100vh;
+  /*height: 100vh;*/
 }
 
 .sidebar > hr {
