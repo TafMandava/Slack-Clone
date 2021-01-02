@@ -17,12 +17,11 @@ function Chat() {
 
     return (
         <div className="chat">
-            <h2>You are in the {roomId} room</h2>
             {/* Chat header */}
             <div className="chat__header">
                 <div className="chat__headerLeft">
                     <h4 className="chat__channelName">
-                        <strong>#general </strong>
+                        <strong># general </strong>
                         <StarBorderOutlinedIcon />
                     </h4>
                 </div>
