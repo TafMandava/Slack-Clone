@@ -1,10 +1,14 @@
 import React from 'react';
 import './Message.css';
 
-function Message({ id, message, timestamp, useImage, user }) {
+function Message({ id, message, timestamp, userImage, user }) {
     return (
         <div className="message">
-            <p>{message}</p>
+            <img src={userImage} alt={user} />
+            <div className="message__info">
+                <h4>{user}</h4>
+                <p>{message}</p>  
+            </div>          
         </div>
     );
 }

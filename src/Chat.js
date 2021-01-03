@@ -53,7 +53,7 @@ function Chat() {
                         id: doc.id, 
                         message: doc.data().message,
                         timestamp: doc.data().timestamp,
-                        useImage: doc.data().useImage,
+                        userImage: doc.data().userImage,
                         user: doc.data().user
                     }))
                 );
@@ -88,7 +88,7 @@ function Chat() {
             <div className="chat__messages">
             {
                 roomMessages?.map((roomMessage) => {
-                    return (<Message id={roomMessage?.id} message={roomMessage?.message} timestamp={roomMessage?.timestamp} useImage={roomMessage?.useImage} user={roomMessage?.user} />);
+                    return (<Message id={roomMessage?.id} message={roomMessage?.message} timestamp={roomMessage?.timestamp} userImage={roomMessage?.userImage} user={roomMessage?.user} />);
                 })
             }
             </div>
