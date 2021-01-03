@@ -14,8 +14,11 @@ import FileCopyIcon from '@material-ui/icons/FileCopy';
 import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import AddIcon from '@material-ui/icons/Add';
+import { useStateValue } from './StateProvider';
 
 function Sidebar() {
+    const [{ user }] = useStateValue();
+
     const [channels, setChannels] = useState([]);
     
     /*
@@ -52,7 +55,7 @@ function Sidebar() {
                     <h2>Slack</h2>
                     <h3>
                         <FiberManualRecordIcon />
-                        Tafadzwa Mandava
+                        {user.displayName}
                     </h3>
                 </div>
                 <CreateIcon /> 
