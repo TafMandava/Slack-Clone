@@ -9,7 +9,7 @@ import { useStateValue } from './StateProvider';
 
 function Header() {
     
-    const [{ user }, dispatch] = useStateValue();
+    const [{ user }] = useStateValue();
 
     return (
         <div className="header">
@@ -29,8 +29,8 @@ function Header() {
                 {/* Avatar of logged in user */}
                 <Avatar 
                     className="header__avatar"
-                    src={user.photoURL}
-                    alt={user.displayName}
+                    src={user?.photoURL}
+                    alt={user?.displayName}
                 />
             </div>            
         </div>
