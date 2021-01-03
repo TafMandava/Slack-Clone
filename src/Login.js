@@ -40,7 +40,7 @@ function Login() {
                 console.log("Result >>> ", result);
                 dispatch({
                     type: actionTypes.SET_USER,
-                    user: result.user.displayName
+                    user: result.user
                 });
             })
             .catch((error) => {
