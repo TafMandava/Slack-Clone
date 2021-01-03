@@ -13,7 +13,8 @@ import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
 import db from './firebase';
 
 function Chat() {
-
+    
+    const [roomMessages, setRoomMessages] = useState([]);
     const [roomDetails, setRoomDetails] = useState(null);
     /* 
         useParams hook
@@ -27,7 +28,7 @@ function Chat() {
         */
         if (roomId) {
             /* 
-                Use the roomId to get the room document
+                Use the roomId to get the room document's name
                 Go to the rooms collection and go to the doc and use the roomId inside the url to find the room that we are in
             */
             db.collection('rooms').doc(roomId).onSnapshot(snapshot => {
@@ -39,11 +40,32 @@ function Chat() {
                 );
             });
 
+            /* 
+                Use the roomId to get the room document's messages. That is data
+                Go to the rooms collection and go to the doc and use the roomId inside the url to find the room that we are in
+                Go to collection inside of it. That is messages
+            */
+            db.collection('rooms').doc(roomId).collection('messages').orderBy('timestamp','asc').onSnapshot(snapshot => {
+
+                setRoomMessages(
+                    snapshot.docs.map(doc => ({
+                        id: doc.id, 
+                        message: doc.data().message,
+                        timestamp: doc.data().timestamp,
+                        useImage: doc.data().useImage,
+                        user: doc.data().user
+                    }))
+                );
+
+            });            
+
         }
 
     }, [roomId]); /* Update the code everytime the roomId changes */
 
     console.log("Room Details >>> ", roomDetails);
+
+    console.log("Room Messages >>> ", roomMessages);
 
     return (
         <div className="chat">
