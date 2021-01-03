@@ -64,7 +64,7 @@ function App() {
                     http://localhost:3000/
                 */}
                 <Route path="/">
-                  <h1>Welcome</h1>
+                  <h1>Welcome {user.displayName}</h1>
                 </Route>                     
               </Switch>
 

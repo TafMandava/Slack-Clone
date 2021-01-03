@@ -5,8 +5,12 @@ import { AccessAlarm, HelpOutline } from '@material-ui/icons';
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
 import SearchIcon from '@material-ui/icons/Search';
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
+import { useStateValue } from './StateProvider';
 
 function Header() {
+    
+    const [{ user }, dispatch] = useStateValue();
+
     return (
         <div className="header">
             <div className="header__left">
@@ -25,8 +29,8 @@ function Header() {
                 {/* Avatar of logged in user */}
                 <Avatar 
                     className="header__avatar"
-                    src=""
-                    alt="Tafadzwa Mandava"
+                    src={user.photoURL}
+                    alt={user.displayName}
                 />
             </div>            
         </div>
