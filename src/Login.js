@@ -29,6 +29,10 @@ function Login() {
         */
         auth.signInWithPopup(provider)
             .then((result) => {
+                /* 
+                    credential.idToken is an authentication token that can be used with Google APIs
+                    We are interested in the fields user.displayName and user.email
+                */
                 console.log(result);
             })
             .catch((error) => {
