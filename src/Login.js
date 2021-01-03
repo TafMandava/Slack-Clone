@@ -3,6 +3,7 @@ import React from 'react';
 import './Login.css';
 import { auth, provider } from './firebase';
 import { useStateValue } from './StateProvider';
+import { actionTypes } from './reducer';
 
 function Login() {
     
@@ -38,7 +39,7 @@ function Login() {
                 */
                 console.log("Result >>> ", result);
                 dispatch({
-                    type: "SET_USER",
+                    type: actionTypes.SET_USER,
                     user: result.user.displayName
                 });
             })
