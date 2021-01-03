@@ -10,6 +10,7 @@ function App() {
   /*
       We want the user at a global level
       There we need to use React Context API or Redux and push data in a Data Layer (StateProvider)
+      Alternative to and better than Prop drilling 
   */
   const [user, setUser] = useState(null);
 
