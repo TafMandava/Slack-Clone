@@ -5,14 +5,22 @@ import Sidebar from './Sidebar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Chat from './Chat';
 import Login from './Login';
+import { useStateValue } from './StateProvider';
 
 function App() {
   /*
       We want the user at a global level
       There we need to use React Context API or Redux and push data in a Data Layer (StateProvider)
       Alternative to and better than Prop drilling 
+
+      const [user, setUser] = useState(null);
+
+      We have a state but we destructure it to get the user
+      const [state, dispatch] = useStateValue();
+
+      The value of the user in the initialState should be null so that the App redirects the user to a Sign-in Page
   */
-  const [user, setUser] = useState(null);
+  const [{ user }, dispatch] = useStateValue();
 
   return (
     <div className="app">

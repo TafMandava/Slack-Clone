@@ -1,10 +1,13 @@
 import { Button } from '@material-ui/core';
 import React from 'react';
 import './Login.css';
-import {auth, provider} from './firebase';
+import { auth, provider } from './firebase';
+import { useStateValue } from './StateProvider';
 
 function Login() {
     
+    const[state, dispatch] = useStateValue();
+
     /*
     const signIn = (e) => {
         e.preventDefault();
@@ -33,7 +36,11 @@ function Login() {
                     credential.idToken is an authentication token that can be used with Google APIs
                     We are interested in the fields user.displayName and user.email
                 */
-                console.log(result);
+                console.log("Result >>> ", result);
+                dispatch({
+                    type: "SET_USER",
+                    user: result.user.displayName
+                });
             })
             .catch((error) => {
                 alert(error.message);
