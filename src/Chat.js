@@ -11,6 +11,7 @@ import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
     https://usehooks.com/ 
 */
 import db from './firebase';
+import Message from './Message';
 
 function Chat() {
     
@@ -83,6 +84,15 @@ function Chat() {
                     </p>
                 </div>
             </div>
+
+            <div className="chat__messages">
+            {
+                roomMessages?.map((roomMessage) => {
+                    return (<Message id={roomMessage?.id} message={roomMessage?.message} timestamp={roomMessage?.timestamp} useImage={roomMessage?.useImage} user={roomMessage?.user} />);
+                })
+            }
+            </div>
+
         </div>
     );
 }
