@@ -1,6 +1,7 @@
 import React from 'react';
 import './SidebarOption.css';
 import { useHistory } from 'react-router-dom';
+import db from './firebase';
 
 function SidebarOption({ Icon, addChannelOption, title, id }) {
     /*
@@ -21,15 +22,23 @@ function SidebarOption({ Icon, addChannelOption, title, id }) {
             If we do not have the id push the title
         */        
         if (id) {
-            history.push(`/room/${id}`)
+            history.push(`/room/${id}`);
         } else {
-            history.push(title)
+            history.push(title);
         }
     }
 
     const addChannel = () => {
-        if (id) {
+        const channelName = prompt('Please enter the channel name');
 
+        /*
+            If the channelName is provided.
+            Add a document with a name channelName
+        */
+        if (channelName) {
+            db.collection('rooms').add({
+                name: channelName
+            });
         }
     }    
 
