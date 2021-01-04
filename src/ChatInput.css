@@ -1,6 +1,28 @@
 .chatInput {
+  border-radius: 20px;
+}
+
+.chatInput > form {
+  display: flex;
+  justify-content: center;
+  position: relative;
 }
 
 .chatInput > form > input {
   color: black;
+  position: fixed;
+  bottom: 30px;
+  width: 70%;
+  object-fit: contain;
+  border: 1px solid gray;
+  border-radius: 3px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.chatInput > form > button {
+  /*
+        The reason we have this is to have a hidden button and use Enter
+    */
+  display: none !important;
 }
