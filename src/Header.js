@@ -6,6 +6,7 @@ import AccessTimeIcon from '@material-ui/icons/AccessTime';
 import SearchIcon from '@material-ui/icons/Search';
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 import { useStateValue } from './StateProvider';
+import Tooltip from '@material-ui/core/Tooltip';
 
 function Header() {
     
@@ -27,11 +28,13 @@ function Header() {
                 {/* Help icon */}
                 <HelpOutlineIcon />
                 {/* Avatar of logged in user */}
-                <Avatar 
-                    className="header__avatar"
-                    src={user?.photoURL}
-                    alt={user?.displayName}
-                />
+                <Tooltip title={user?.displayName}>
+                    <Avatar 
+                        className="header__avatar"
+                        src={user?.photoURL}
+                        alt={user?.displayName}
+                    />
+                </Tooltip>
             </div>            
         </div>
     );

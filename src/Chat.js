@@ -13,6 +13,7 @@ import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
 import db from './firebase';
 import Message from './Message';
 import ChatInput from './ChatInput';
+import Tooltip from '@material-ui/core/Tooltip';
 
 function Chat() {
     
@@ -81,7 +82,9 @@ function Chat() {
                 </div>
                 <div className="chat__headerRight">
                     <p>
-                        <InfoOutlinedIcon /> Details
+                        <Tooltip title="Show channel details">
+                            <InfoOutlinedIcon />
+                        </Tooltip>
                     </p>
                 </div>
             </div>
