@@ -12,6 +12,7 @@ import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
 */
 import db from './firebase';
 import Message from './Message';
+import ChatInput from './ChatInput';
 
 function Chat() {
     
@@ -88,10 +89,19 @@ function Chat() {
             <div className="chat__messages">
             {
                 roomMessages?.map((roomMessage) => {
-                    return (<Message id={roomMessage?.id} message={roomMessage?.message} timestamp={roomMessage?.timestamp} userImage={roomMessage?.userImage} user={roomMessage?.user} />);
+                    return (<Message 
+                                id={roomMessage?.id} 
+                                message={roomMessage?.message} 
+                                timestamp={roomMessage?.timestamp} 
+                                userImage={roomMessage?.userImage} 
+                                user={roomMessage?.user} 
+                           />);
                 })
             }
             </div>
+            
+            {/* `We need to know where to push the message. Therefore, we pass the channel's ID  */}
+            <ChatInput channelName={roomDetails?.name} channelId={roomId} />
 
         </div>
     );

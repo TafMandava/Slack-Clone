@@ -1,0 +1,6 @@
+.chatInput {
+}
+
+.chatInput > form > input {
+  color: black;
+}
