@@ -17,10 +17,8 @@ function ChatInput({ channelName, channelId }) {
         By default if fires off an even e with it
     */
     const sendMessage = (e) => {
-        
-        console.log("SEND MESSAGE");
 
-        console.log("Channel ID", channelId);
+        console.log("Channel ID or Room ID >>> ", channelId);
 
         /* Do not refresh the page */
         e.preventDefault();
@@ -28,6 +26,9 @@ function ChatInput({ channelName, channelId }) {
         if(channelId) {
             db.collection('rooms').doc(channelId).collection('messages').add({
                 message: input,
+                /*
+                    Regardless of whether l'm sending this in South Africa, Australia, DRC, Canada, China, Russia e.t.c it's going to have a consistent timestamp
+                */
                 timestamp: firebase.firestore.FieldValue.serverTimestamp(),
                 userImage:  user.photoURL,
                 user: user.displayName
@@ -42,7 +43,10 @@ function ChatInput({ channelName, channelId }) {
             <form>
                 <input 
                     value={input}
-                    /* `We want to track all the times the user types input */
+                    /* 
+                        We want to track all the times the user types input 
+                        Fire off an event everytime a user types
+                    */
                     onChange={(e) => setInput(e.target.value)}
                     placeholder={`Message #${channelName?.toLowerCase()}`}
                 />
